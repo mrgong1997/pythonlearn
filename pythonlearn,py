@@ -1,0 +1,94 @@
+#1.区分大小写
+#2.tab代表四个空格，一个程序块，类似于{ }
+#3.栈存放变量（如 a b c），堆存放对象（如 3 “hello”） 变量存储的就是对象的地址，变量就是对象的引用。如图（很重要！！！）。
+a=3
+print(type(3))
+print(id(3))
+print(3)
+print(type(a))
+print(id(a))
+print(a)
+#4.链式赋值：x=y=1相当于把1同时赋值给x和y   系列解包赋值 a，b=1,2 相当于1给a 2给b 但是可以用于变量互换a，b=b，a
+x=y=1
+print(x,y)
+m,n=1,2
+print(m,n)
+m,n=n,m
+print(m,n)
+#5.不支持常量，只能人工不修改全大写的变量名的值
+MAXSIZE=100
+MAXSIZE=101
+print(MAXSIZE)
+#6./代表浮点数除法，//代表整数除法，%代表取余，**代表幂
+print(6/3)
+print(6//3)
+print(7%2)
+print(2**3)
+#7.二进制 0b10=2 八进制0o10=8 十六进制0x10=16
+print(0b10,0o10,0x10)
+#8.强制转换 int() float() str()  bin() 整数浮点数混合运算，表达式自动转型成浮点数
+print(int(3.14))
+print(float(3))
+print(str('12'))
+print(bool(0))
+print(2+8.0)
+#9.浮点数用科学计数法表示如3.14可表示为314e-2  round()用于四舍五入如round（3.14）=3
+print(314e-2,round(3.14))
+#10.与或非用 and or not 表示    （java用的  && ||  ！）表示   如 1 and 0就是0  1 or 0就是1  not 1就是0
+print(1 and 0,1 or 0,not 0)
+#11. is用于比较两个变量是不是（引用）用一个对象，is not看是不是不是用一个。
+a=3000
+b=3000
+print(a is b)
+print(a is not b)
+#12.用单引号或者双引号代表字符串,三引号可代表长段字符串 单个字符的两个基本方法 ord(str) chr(数字)
+print(ord('龚'))
+print(chr(40858))
+#13.len(str)代表字符串有多长（包括空格）
+print(len(''))
+print(len('adc 好  23 '))
+#14.转义字符  \ :续行  \\：打斜杠  \'：打单引号 \"：打双引号 \b：退格backspace  \n：换行 \t：tab  \r：回车
+print('a\
+b')
+print('\\')
+print('\'')
+print('1\n2\n3')
+print('1\t2\t3')
+#15.字符串复制直接用乘号,打印字符串默认会加个回车，如不想加可以用end=''实现
+print('abc'*3)
+
+print('aa',end='')
+print('bb')
+#16.从控制台读取字符串:input(提示内容)方法  （读取的格式只能是字符串）
+a=input('请输入a:')
+print(a)
+print(type(a))
+#17.使用[]提取字符：a[偏移量]  从0开始  (注意是提取，不能更改他的值哦)
+a='abcdefghij'
+print(a[0],a[-1])
+#18.字符串替换：str.replace(str1,str2)  (把str中所有的str1转换成str2)
+a='xaxbxcxd'
+print(a.replace('x','好'))
+#19.字符串截取  a[起始偏移量:终止偏移量:步长] (包头不包尾,默认0和max) 如a='abcdef' a[:]=整个 a[2:]='cdef' a[1:5:2]='bd'
+a='abcdef'
+print(a[:],a[2:],a[1:5:2],a[-3:])
+#20.字符串分割和合并  a.split(分割字符，如不写默认使用空白字符)  合并字符.join(a)  此过程会将字符串和含子字符串的列表相互转换
+a='i love python'
+print(a.split())
+print(' '.join(a.split()))
+#21.字符串驻留机制以及字符串比较  如果字符串符合标识符规则（仅包含字母数字下划线），则它被再次创建时这个变量会直接引用而不是重新创建
+#比较：is/is not 比较的是它是不是同一个对象或者地址，==/！=比较的是它的值
+a='a_b'
+b='a_b'
+print(a is b)
+a='a%b'
+b='a%b'
+print(a is b)
+print(a==b)
+#22.格式化   a='{属性名1}{属性名2}'  a.format(属性名1=属性值1，属性名2=属性值2)
+#数字格式化  对属性值进行限制
+a='{name}{id}{name}'
+print(a.format(name='小红',id=3))
+b='{money:.2f}'
+print(b.format(money=5154.2551515))
+#23.32e
